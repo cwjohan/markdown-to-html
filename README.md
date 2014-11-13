@@ -1,7 +1,7 @@
 markdown-to-html
 ================
 
-Command-line utility to convert Github Flavored Markdown to HTML.
+Command-line utility to convert Github Flavored Markdown to HTML. (under construction)
 
 ##Example Usage
 
