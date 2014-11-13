@@ -1,0 +1,35 @@
+{
+  "name": "markdown-to-html",
+  "version": "0.0.0",
+  "description": "Converts markdown text to HTML",
+  "main": "markdown.js",
+  "scripts": {
+    "test": "bash script/test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/cwjohan/markdown-to-html"
+  },
+  "keywords": [
+    "markdown",
+    "html",
+    "render",
+    "convert"
+  ],
+  "author": "Craig Johannsen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cwjohan/markdown-to-html/issues"
+  },
+  "homepage": "https://github.com/cwjohan/markdown-to-html",
+  "dependencies": {
+    "gfm-linkify": "^0.1.0",
+    "marked": "^0.3.2",
+    "pygmentize-bundled": "^2.2.0",
+    "request": "^2.47.0"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "devDependencies": {}
+}
