@@ -3,6 +3,12 @@
   "version": "0.0.0",
   "description": "Converts markdown text to HTML",
   "main": "markdown.js",
+  "bin": {
+    "markdown": "./bin/markdown",
+    "markdownb": "./bin/markdownb",
+    "github-markdown": "./bin/github-markdown",
+    "github-markdownb": "./bin/github-markdownb"
+  },
   "scripts": {
     "test": "bash script/test"
   },
@@ -25,8 +31,10 @@
   "dependencies": {
     "gfm-linkify": "^0.1.0",
     "marked": "^0.3.2",
+    "open": "0.0.5",
     "pygmentize-bundled": "^2.2.0",
-    "request": "^2.47.0"
+    "request": "^2.47.0",
+    "tmp": "0.0.24"
   },
   "directories": {
     "test": "test"

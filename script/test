@@ -1,0 +1,24 @@
+#!/bin/bash
+echo ======Testing markdown========
+node bin/markdown test/test.md gfm highlight style.css cwjohan/node-redis-queue >test/markdown.html
+result=`diff -q -w test/markdown-ref.html test/markdown.html`
+if [ -z "$result" ]; then
+  echo Passed
+else
+  echo Failed
+  echo $result
+  diff -w test/markdown-ref.html test/markdown.html
+fi
+
+echo
+echo =======Testing github-markdown=========
+node bin/github-markdown test/test.md >test/github-markdown.html
+result=`diff -q -w test/github-markdown-ref.html test/github-markdown.html`
+if [ -z "$result" ]; then
+  echo Passed
+else
+  echo Failed
+  echo $result
+  diff -w test/github-markdown-ref.html test/github-markdown.html
+fi
+

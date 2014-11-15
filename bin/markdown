@@ -1,0 +1,16 @@
+#!node
+// Converts a markdown file into an HTML file, writing it to stdout.
+//
+// Usage:
+//   node markdown <filename> <flavor> <stylesheet> <github user id>
+//
+var markdown = require('../lib/markdown');
+
+var fileName = process.argv[2];
+var flavour = process.argv[3] || 'gfm';
+var highlight = process.argv[4];
+var stylesheet = process.argv[5];
+var context = process.argv[6];
+
+markdown(fileName, flavour, highlight, stylesheet, context);
+

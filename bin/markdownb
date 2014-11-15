@@ -1,0 +1,59 @@
+#!node
+// Converts a markdown file into an HTML file, writing it to stdout.
+//
+// Usage:
+//   node markdown <filename> <flavor> <stylesheet> <github user id>
+//
+var markdown = require('../lib/markdown');
+var fs = require('fs');
+var tmp = require('tmp');
+var spawn = require('child_process').spawn;
+var open = require('open');
+var path = require('path');
+
+var fileName = process.argv[2];
+var flavour = process.argv[3] || 'gfm';
+var highlight = process.argv[4] || 'none';
+var stylesheet = process.argv[5] || 'none';
+var context = process.argv[6] || 'none';
+
+tmp.file({prefix: 'markdown-', postfix: '.html'}, function(err, tmpPath, fd, cleanupCB) {
+  if (err) {
+    console.log('>>>error: ' + err);
+    process.exit();
+  }
+  var cssfullpath;
+  if (stylesheet !== 'none') {
+    try {
+      var csscontent = fs.readFileSync(stylesheet);
+      dirname = path.dirname(tmpPath);
+      try {
+        var cssdir = path.dirname(stylesheet);
+        var cssbasename = path.basename(stylesheet);
+        var cssdirpath = path.join(dirname, cssdir);
+        if (cssdir && ! fs.existsSync(cssdirpath)) fs.mkdirSync(cssdirpath);
+        cssfullpath = path.join(cssdirpath, cssbasename);
+        fs.writeFileSync(cssfullpath, csscontent);
+      } catch(err) {
+        console.error('>>>Could not write temp stylesheet: ' + err);
+        process.exit();
+      }
+    } catch(err) {
+      console.error('>>>stylesheet file not found.');
+      process.exit();
+    }
+  }
+  console.log('tmp path="' + tmpPath);
+  var out = fs.createWriteStream(null, {fd: fd});
+  child = spawn('node', ['./bin/markdown', fileName, flavour, highlight, stylesheet, context]);
+  child.stdout.pipe(out);
+  child.stderr.pipe(out);
+  child.on('close', function(code) {
+    open(tmpPath);
+    console.log('View generated HTML in browser');
+    setTimeout(function() {
+      if(cssfullpath) fs.unlinkSync(cssfullpath);
+      console.log('Temporary files deleted');
+    }, 10000);
+  });
+});
