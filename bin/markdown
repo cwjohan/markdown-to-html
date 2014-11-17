@@ -7,8 +7,22 @@
 //   markdown --help
 // to see more detailed usage info.
 //
-var markdown = require('../lib/markdown');
+var Markdown = require('../lib/markdown');
 var opts = require('../lib/getopts')();
 var fileName = opts._[0];
-markdown(fileName, opts.flavor, opts.highlight, opts.stylesheet, opts.context);
+var verbose = opts.verbose || opts.debug;
+if (verbose) console.error('>>>opts=', opts);
+
+var md = new Markdown();
+md.debug = opts.debug;
+md.bufmax = 2048;
+
+md.translate(fileName, opts.flavor, opts.highlight, opts.stylesheet, opts.context, function(err) {
+  if (err) {
+    console.error('>>>' + err);
+    process.exit();
+  }
+  if (verbose) console.error('>>>starting to pipe...');
+  md.pipe(process.stdout);
+});
 
