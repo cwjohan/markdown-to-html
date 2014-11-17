@@ -1,6 +1,6 @@
 {
   "name": "markdown-to-html",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Converts markdown text to HTML",
   "main": "markdown.js",
   "bin": {
