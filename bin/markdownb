@@ -5,17 +5,15 @@
 //   node markdown <filename> <flavor> <stylesheet> <github user id>
 //
 var markdown = require('../lib/markdown');
+var opts = require('../lib/getopts')();
+console.log('>>>opts=', opts);
+var fileName = opts._[0];
+var stylesheet = opts.stylesheet;
 var fs = require('fs');
 var tmp = require('tmp');
 var spawn = require('child_process').spawn;
 var open = require('open');
 var path = require('path');
-
-var fileName = process.argv[2];
-var flavour = process.argv[3] || 'gfm';
-var highlight = process.argv[4] || 'none';
-var stylesheet = process.argv[5] || 'none';
-var context = process.argv[6] || 'none';
 
 tmp.file({prefix: 'markdown-', postfix: '.html'}, function(err, tmpPath, fd, cleanupCB) {
   if (err) {
@@ -23,7 +21,7 @@ tmp.file({prefix: 'markdown-', postfix: '.html'}, function(err, tmpPath, fd, cle
     process.exit();
   }
   var cssfullpath;
-  if (stylesheet !== 'none') {
+  if (stylesheet) {
     try {
       var csscontent = fs.readFileSync(stylesheet);
       dirname = path.dirname(tmpPath);
@@ -45,7 +43,11 @@ tmp.file({prefix: 'markdown-', postfix: '.html'}, function(err, tmpPath, fd, cle
   }
   console.log('tmp path="' + tmpPath);
   var out = fs.createWriteStream(null, {fd: fd});
-  child = spawn('node', ['./bin/markdown', fileName, flavour, highlight, stylesheet, context]);
+  child = spawn('node', ['./bin/markdown', fileName,
+             (opts.flavor) ? ' -f ' : '',  (opts.flavor) ? opts.flavor : '',
+             (opts.highlight) ? ' -h' : '',
+             (stylesheet) ? ' -s ' : '', (stylesheet) ? stylesheet : '',
+             (opts.context) ? ' -c ' : '', (opts.context) ? opts.context : '']);
   child.stdout.pipe(out);
   child.stderr.pipe(out);
   child.on('close', function(code) {

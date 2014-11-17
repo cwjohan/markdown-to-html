@@ -1,6 +1,6 @@
 #!/bin/bash
 echo ======Testing markdown========
-node bin/markdown test/test.md gfm highlight style.css cwjohan/node-redis-queue >test/markdown.html
+node bin/markdown test/test.md -h -s style.css -c cwjohan/node-redis-queue >test/markdown.html
 result=`diff -q -w test/markdown-ref.html test/markdown.html`
 if [ -z "$result" ]; then
   echo Passed
