@@ -9,6 +9,7 @@
     "github-markdown": "./bin/github-markdown",
     "github-markdownb": "./bin/github-markdownb"
   },
+  "preferGlobal": true,
   "scripts": {
     "test": "bash script/test",
     "clean": "bash script/clean"

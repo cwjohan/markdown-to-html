@@ -2,6 +2,15 @@ markdown-to-html
 ================
 
 Command-line utility to convert Github Flavored Markdown to HTML.
+Output may be to stdout or to your default browser.
+Also, the underlying Markdown and GithubMarkdown classes readable stream classes
+and may be used however you like (e.g., pipe to an http response or to stdout).
+
+##Installation
+
+```
+npm install markdown-to-html -g
+```
 
 ##Example Usage
 
