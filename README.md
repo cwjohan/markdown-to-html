@@ -83,6 +83,6 @@ Defaults to 1024.
 options. Calls the onDone callback function when finished if specified. If you are going to
 pipe the output to another stream, this is most reliably done in the callback function.
 
-The `onDone` callback takes a single error paramter, which ought to be tested before
+The `onDone` callback takes a single error parameter, which ought to be tested before
 performing any other operations on the Markdown or GithubMarkdown stream.
 

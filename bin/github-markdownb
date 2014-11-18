@@ -1,2 +1,71 @@
-#!/bin/bash
-echo Nothing to see here yet. Move along.
+#!node
+// Converts a markdown file into an HTML file, writing it to a temp file.
+// Then invokes the default browser to open the temp file.
+//
+// Usage:
+//   github-markdownb <filename> [<options>]
+//
+// Example:
+//   bin/github-markdownb test/test2.md -s test/style.css -h \
+//        -c cwjohan/node-redis-queue -t 'file $BASENAME in $DIRNAME'
+//
+//
+var GithubMarkdown = require('..').GithubMarkdown;
+var opts = require('../lib/getopts')();
+var verbose = opts.verbose || opts.debug;
+var debug = opts.debug;
+if (verbose) console.log('>>>opts=', opts);
+var fileName = opts._[0];
+var stylesheet = opts.stylesheet;
+var fs = require('fs');
+var tmp = require('tmp');
+var open = require('open');
+var path = require('path');
+
+tmp.file({prefix: 'markdown-', postfix: '.html'}, function(err, tmpPath, fd, cleanupCB) {
+  if (err) {
+    console.log('>>>error: ' + err);
+    process.exit();
+  }
+  var cssfullpath;
+  if (stylesheet) {
+    try {
+      var csscontent = fs.readFileSync(stylesheet);
+      dirname = path.dirname(tmpPath);
+      try {
+        var cssdir = path.dirname(stylesheet);
+        var cssbasename = path.basename(stylesheet);
+        var cssdirpath = path.join(dirname, cssdir);
+        if (cssdir && ! fs.existsSync(cssdirpath)) fs.mkdirSync(cssdirpath);
+        cssfullpath = path.join(cssdirpath, cssbasename);
+        fs.writeFileSync(cssfullpath, csscontent);
+      } catch(err) {
+        console.error('>>>Could not write temp stylesheet: ' + err);
+        process.exit();
+      }
+    } catch(err) {
+      console.error('>>>stylesheet file not found.');
+      process.exit();
+    }
+  }
+  if (verbose) console.log('tmp path="' + tmpPath);
+  var out = fs.createWriteStream(null, {fd: fd});
+  var md = new GithubMarkdown();
+  md.bufmax = 128;
+  md.debug = debug;
+  md.render(fileName, opts, function(err) {
+    if (err) {
+      console.log('>>>' + err);
+      process.exit();
+    }
+    console.log('View generated HTML in browser');
+    md.pipe(out);
+    open(tmpPath);
+    setTimeout(function() {
+      if(cssfullpath) fs.unlinkSync(cssfullpath);
+      cleanupCB();
+      console.log('Temporary files deleted');
+    }, 10000);
+  });
+});
+

@@ -1,17 +1,23 @@
 #!node
-// Converts a markdown file into an HTML file, writing it to stdout.
+// Converts a markdown file into an HTML file, writing it to a temp file.
+// Then invokes the default browser to open the temp file.
 //
 // Usage:
-//   node markdown <filename> <flavor> <stylesheet> <github user id>
+//   markdownb <filename> [<options>]
 //
-var markdown = require('../lib/markdown');
+// Example:
+//   bin/markdownb test/test2.md -s test/style.css -h -c cwjohan/node-redis-queue -t 'file $BASENAME in $DIRNAME'
+//
+//
+var Markdown = require('..').Markdown;
 var opts = require('../lib/getopts')();
-console.log('>>>opts=', opts);
+var verbose = opts.verbose || opts.debug;
+var debug = opts.debug;
+if (verbose) console.log('>>>opts=', opts);
 var fileName = opts._[0];
 var stylesheet = opts.stylesheet;
 var fs = require('fs');
 var tmp = require('tmp');
-var spawn = require('child_process').spawn;
 var open = require('open');
 var path = require('path');
 
@@ -41,20 +47,22 @@ tmp.file({prefix: 'markdown-', postfix: '.html'}, function(err, tmpPath, fd, cle
       process.exit();
     }
   }
-  console.log('tmp path="' + tmpPath);
+  if (verbose) console.log('tmp path="' + tmpPath);
   var out = fs.createWriteStream(null, {fd: fd});
-  child = spawn('node', ['./bin/markdown', fileName,
-             (opts.flavor) ? ' -f ' : '',  (opts.flavor) ? opts.flavor : '',
-             (opts.highlight) ? ' -h' : '',
-             (stylesheet) ? ' -s ' : '', (stylesheet) ? stylesheet : '',
-             (opts.context) ? ' -c ' : '', (opts.context) ? opts.context : '']);
-  child.stdout.pipe(out);
-  child.stderr.pipe(out);
-  child.on('close', function(code) {
-    open(tmpPath);
+  var md = new Markdown();
+  md.bufmax = 2048;
+  md.debug = debug;
+  md.render(fileName, opts, function(err) {
+    if (err) {
+      console.log('>>>' + err);
+      process.exit();
+    }
     console.log('View generated HTML in browser');
+    md.pipe(out);
+    open(tmpPath);
     setTimeout(function() {
       if(cssfullpath) fs.unlinkSync(cssfullpath);
+      cleanupCB();
       console.log('Temporary files deleted');
     }, 10000);
   });
