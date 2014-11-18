@@ -2,12 +2,12 @@
 // Converts a markdown file into an HTML file, writing it to stdout.
 //
 // Usage:
-//   markdown <filename> [options]
+//   markdown <filename> [<options>]
 // or
 //   markdown --help
 // to see more detailed usage info.
 //
-var Markdown = require('../lib/markdown');
+var Markdown = require('..').Markdown;
 var opts = require('../lib/getopts')();
 var fileName = opts._[0];
 var verbose = opts.verbose || opts.debug;
@@ -17,7 +17,7 @@ var md = new Markdown();
 md.debug = opts.debug;
 md.bufmax = 2048;
 
-md.translate(fileName, opts.flavor, opts.highlight, opts.stylesheet, opts.context, function(err) {
+md.render(fileName, opts, function(err) {
   if (err) {
     console.error('>>>' + err);
     process.exit();

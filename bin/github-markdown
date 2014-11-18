@@ -1,50 +1,29 @@
-#!bash
+#!node
 // Converts a markdown file into an HTML file, writing it to stdout.
-// Uses the github API, so it outputs exactly what you will see on github.
+// Uses the github API, so it outputs what you will see on github,
+// more or less. Some formatting I would have expected does not happen.
 //
 // Usage:
-//   node format_markdown <filename> <context> <github user id>
+//   github-markdown <filename> [<options>]
+// or
+//   github-markdown --help
 //
-var request = require('request');
-var fs = require('fs');
+var GithubMarkdown = require('..').GithubMarkdown;
+var opts = require('../lib/getopts')();
+var fileName = opts._[0];
+var verbose = opts.verbose || opts.debug;
+if (verbose) console.error('>>>opts=', opts);
 
-var fileName = process.argv[2];
-var context = process.argv[3] || 'cwjohan/node-redis-queue';
-var userName = process.argv[4] || 'cwjohan'
+var md = new GithubMarkdown();
+md.debug = opts.debug;
+md.bufmax = 2048;
 
-if (! fileName) {
-  console.log('Missing file name arg');
-  process.exit();
-}
-
-var fileContent = fs.readFileSync(fileName).toString();
-
-var msg = {
-  text: fileContent,
-  mode: 'gfm',
-  context: context
-};
-
-var jsonMsg = JSON.stringify(msg);
-
-var options = {
-  method: 'POST',
-  preambleCRLF: true,
-  postambleCRLF: true,
-  uri: 'https://api.github.com/markdown',
-  'content-type': 'application/json',
-  headers: {
-    'User-Agent' : userName
-  },
-  body: jsonMsg
-};
-
-function handleResponse(error, response, body) {
-  if (error) {
-    return console.error('upload failed:', error);
+md.render(fileName, opts, function(err) {
+  if (err) {
+    console.error('>>>' + err);
+    process.exit();
   }
-  console.log(body);
-}
-
-request(options, handleResponse);
+  if (verbose) console.error('>>>starting to pipe...');
+  md.pipe(process.stdout);
+});
 

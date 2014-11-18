@@ -1,7 +1,7 @@
 {
   "name": "markdown-to-html",
-  "version": "0.0.3",
-  "description": "Converts markdown text to HTML",
+  "version": "0.0.4",
+  "description": "Converts markdown text to HTML. A readable stream plus utilities.",
   "main": "markdown.js",
   "bin": {
     "markdown": "./bin/markdown",
@@ -19,9 +19,12 @@
   },
   "keywords": [
     "markdown",
+    "markdown-to-html",
     "html",
     "render",
-    "convert"
+    "convert",
+    "stream",
+    "pipe"
   ],
   "author": "Craig Johannsen",
   "license": "MIT",
