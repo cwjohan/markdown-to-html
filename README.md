@@ -8,8 +8,16 @@ and may be used however you like (e.g., pipe to an http response or to stdout).
 
 ##Installation
 
+####To use the command line utilities
+
 ```
 npm install markdown-to-html -g
+```
+
+####To use the Markdown or GithubMarkdown classes in your project
+
+```
+npm install markdown-to-html --save
 ```
 
 ##Example Usage
@@ -39,6 +47,9 @@ github-markdownb myfile.md
 
 ####Run the web demo
 
+1. Run `git clone https://github.com/cwjohan/markdown-to-html.git` to create a markdown-to-html directory.
+1. Run `cd markdown-to-html`
+1. Run `npm install`
 1. Run `npm start`.
 1. In a web browser address field type [localhost:3000](http://localhost:3000).
 
