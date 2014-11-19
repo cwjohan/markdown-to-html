@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>test/test.md</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h1 id="something-really-cool">Something Really Cool</h1>
+<p>Hello world github/linguist#1 <strong>cool</strong>, and #1!<br>And that is not all.</p>
+<h1 id="lists">Lists</h1>
+<h2 id="numbered-list">Numbered List</h2>
+<ol>
+<li>Item One</li>
+<li>Item Two</li>
+<li>Item Three</li>
+</ol>
+<h2 id="bullet-list">Bullet List</h2>
+<ul>
+<li>Item One</li>
+<li>Item Two</li>
+<li>Item Three</li>
+</ul>
+<h1 id="code-example">Code Example</h1>
+<h2 id="code-enclosed-in-backquotes-">Code enclosed in &#39;backquotes&#39;:</h2>
+<p>Always use <code>var</code> to define a variable. For example, <code>var baz = &#39;initial value&#39;;</code> would define<br>variable <code>baz</code>.</p>
+<h2 id="this-is-some-nonsense-javascript-code-">This is some nonsense javascript code:</h2>
+<pre><code><div class="highlight"><pre>    <span class="kd">var</span> <span class="nx">fs</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;fs&#39;</span><span class="p">);</span>
+    <span class="kd">var</span> <span class="nx">count</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">text</span><span class="p">;</span>
+    <span class="nx">exports</span><span class="p">.</span><span class="nx">bar</span> <span class="o">=</span> <span class="p">{</span>
+      <span class="nx">boo</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="nx">baz</span><span class="o">:</span> <span class="s1">&#39;Fred&#39;</span>
+    <span class="p">};</span>
+
+    <span class="kd">function</span> <span class="nx">foo</span><span class="p">(</span><span class="nx">inc</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">try</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;foo has been called&quot;</span><span class="p">);</span>
+        <span class="nx">count</span> <span class="o">=</span> <span class="nx">count</span> <span class="o">+</span> <span class="nx">inc</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">count</span> <span class="o">&gt;=</span> <span class="mi">10</span><span class="p">)</span> <span class="p">{</span>
+          <span class="nx">count</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+          <span class="nx">text</span> <span class="o">=</span> <span class="nx">fs</span><span class="p">.</span><span class="nx">readFileSync</span><span class="p">(</span><span class="s1">&#39;foo.txt&#39;</span><span class="p">);</span>
+        <span class="p">}</span>
+      <span class="k">catch</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">throw</span> <span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="s1">&#39;Help! &#39;</span> <span class="o">+</span> <span class="nx">err</span><span class="p">);</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+</pre></div>
+
+</code></pre><h1 id="fenced-javascript-code">Fenced Javascript Code</h1>
+<pre><code><div class="highlight"><pre><span class="err">```</span><span class="nx">js</span>    
+<span class="kd">var</span> <span class="nx">fs</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;fs&#39;</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">count</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">text</span><span class="p">;</span>
+<span class="nx">exports</span><span class="p">.</span><span class="nx">bar</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">boo</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="nx">baz</span><span class="o">:</span> <span class="s1">&#39;Fred&#39;</span>
+<span class="p">};</span>
+
+<span class="kd">function</span> <span class="nx">foo</span><span class="p">(</span><span class="nx">inc</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">try</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;foo has been called&quot;</span><span class="p">);</span>
+    <span class="nx">count</span> <span class="o">=</span> <span class="nx">count</span> <span class="o">+</span> <span class="nx">inc</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">count</span> <span class="o">&gt;=</span> <span class="mi">10</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">count</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="nx">text</span> <span class="o">=</span> <span class="nx">fs</span><span class="p">.</span><span class="nx">readFileSync</span><span class="p">(</span><span class="s1">&#39;foo.txt&#39;</span><span class="p">);</span>
+    <span class="p">}</span>
+  <span class="k">catch</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">throw</span> <span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="s1">&#39;Help! &#39;</span> <span class="o">+</span> <span class="nx">err</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+<span class="err">```</span>
+</pre></div>
+
+</code></pre><h2 id="fenced-ruby-code">Fenced Ruby Code</h2>
+<pre><code><div class="highlight"><pre><span class="err">```</span><span class="nx">ruby</span>
+<span class="nx">require</span> <span class="s2">&quot;bunny&quot;</span>
+
+<span class="nx">conn</span> <span class="o">=</span> <span class="nx">Bunny</span><span class="p">.</span><span class="k">new</span><span class="p">(</span><span class="o">:</span><span class="nx">hostname</span> <span class="o">=&gt;</span> <span class="s2">&quot;127.0.0.1&quot;</span><span class="p">,</span> <span class="o">:</span><span class="nx">port</span> <span class="o">=&gt;</span> <span class="mi">5672</span><span class="p">)</span>
+<span class="nx">conn</span><span class="p">.</span><span class="nx">start</span>
+
+<span class="nx">ch</span> <span class="o">=</span> <span class="nx">conn</span><span class="p">.</span><span class="nx">create_channel</span>
+<span class="nx">q</span> <span class="o">=</span> <span class="nx">ch</span><span class="p">.</span><span class="nx">queue</span><span class="p">(</span><span class="s2">&quot;hello&quot;</span><span class="p">)</span>
+
+<span class="nx">q</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span><span class="o">:</span><span class="nx">ack</span> <span class="o">=&gt;</span> <span class="kc">true</span><span class="p">,</span> <span class="o">:</span><span class="nx">block</span> <span class="o">=&gt;</span> <span class="kc">true</span><span class="p">,)</span> <span class="k">do</span> <span class="o">|</span><span class="nx">delivery_info</span><span class="p">,</span> <span class="nx">properties</span><span class="p">,</span> <span class="nx">body</span><span class="o">|</span>
+    <span class="nx">puts</span> <span class="s2">&quot; [x] Received &#39;#{body}&#39;&quot;</span>
+    <span class="err">#</span> <span class="nx">imitate</span> <span class="nx">some</span> <span class="nx">work</span>
+    <span class="nx">sleep</span> <span class="nx">body</span><span class="p">.</span><span class="nx">count</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">).</span><span class="nx">to_i</span>
+    <span class="nx">puts</span> <span class="s2">&quot; [x] Done&quot;</span>
+    <span class="nx">ch</span><span class="p">.</span><span class="nx">ack</span><span class="p">(</span><span class="nx">delivery_info</span><span class="p">.</span><span class="nx">delivery_tag</span><span class="p">)</span>
+    <span class="k">if</span> <span class="nx">body</span> <span class="o">==</span> <span class="s2">&quot;stop&quot;</span>
+        <span class="nx">delivery_info</span><span class="p">.</span><span class="nx">consumer</span><span class="p">.</span><span class="nx">cancel</span>
+    <span class="nx">end</span>
+<span class="nx">end</span>
+<span class="err">```</span>
+</pre></div>
+
+</code></pre><h2 id="fenced-coffeescript-code">Fenced Coffeescript Code</h2>
+<pre><code><div class="highlight"><pre><span class="err">```</span><span class="nx">coffee</span>
+<span class="nx">fs</span> <span class="o">=</span> <span class="nx">require</span> <span class="s1">&#39;fs&#39;</span>
+<span class="nx">count</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="nx">text</span> <span class="o">=</span> <span class="kc">null</span>
+<span class="nx">exports</span><span class="p">.</span><span class="nx">bar</span> <span class="o">=</span>
+  <span class="nx">boo</span><span class="o">:</span> <span class="kc">true</span>
+  <span class="nx">baz</span><span class="o">:</span> <span class="s1">&#39;Fred&#39;</span>
+
+<span class="nx">foo</span> <span class="o">=</span> <span class="p">(</span><span class="nx">inc</span><span class="p">)</span> <span class="o">-&gt;</span>
+  <span class="k">try</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span> <span class="s2">&quot;foo has been called&quot;</span>
+    <span class="nx">count</span> <span class="o">=</span> <span class="nx">count</span> <span class="o">+</span> <span class="nx">inc</span>
+    <span class="k">if</span> <span class="nx">count</span> <span class="o">&gt;=</span> <span class="mi">10</span>
+      <span class="nx">count</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">else</span>
+      <span class="nx">text</span> <span class="o">=</span> <span class="nx">fs</span><span class="p">.</span><span class="nx">readFileSync</span> <span class="s1">&#39;foo.txt&#39;</span>
+  <span class="k">catch</span> <span class="nx">err</span>
+    <span class="k">throw</span> <span class="k">new</span> <span class="nb">Error</span> <span class="s1">&#39;Help! &#39;</span> <span class="o">+</span> <span class="nx">err</span>
+<span class="err">```</span>
+</pre></div>
+
+</code></pre><h2 id="fenced-python-code">Fenced Python Code</h2>
+<pre><code><div class="highlight"><pre><span class="err">```</span><span class="nx">py</span>
+<span class="nx">def</span> <span class="nx">fib</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span><span class="o">:</span>
+    <span class="k">if</span> <span class="nx">n</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="o">:</span>
+        <span class="k">return</span> <span class="nx">n</span> <span class="o">*</span> <span class="nx">fib</span><span class="p">(</span><span class="nx">n</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">else</span><span class="o">:</span>
+        <span class="k">return</span> <span class="mi">1</span>
+
+<span class="k">if</span> <span class="nx">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="o">:</span>
+    <span class="kr">import</span> <span class="nx">sys</span>
+    <span class="nx">n</span> <span class="o">=</span> <span class="kr">int</span><span class="p">(</span><span class="nx">sys</span><span class="p">.</span><span class="nx">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="k">if</span> <span class="nx">len</span><span class="p">(</span><span class="nx">sys</span><span class="p">.</span><span class="nx">argv</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="k">else</span> <span class="mi">5</span>
+    <span class="nx">f</span> <span class="o">=</span> <span class="nx">fib</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span>
+    <span class="nx">print</span> <span class="s1">&#39;fib(&#39;</span><span class="p">,</span> <span class="nx">n</span><span class="p">,</span> <span class="s1">&#39;) is &#39;</span><span class="p">,</span> <span class="nx">f</span>
+<span class="err">```</span>
+</pre></div>
+
+</code></pre><h1 id="in-conclusion">In Conclusion</h1>
+<p>You <em>can</em> do it <strong>too</strong>!<br>Try to enclose <code>code</code> in <em>backquotes</em>.</p>
+
+</body>

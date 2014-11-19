@@ -1,0 +1,23 @@
+{
+    "name": "markdown-to-html web demo",
+    "version": "1.0.1",
+    "description":
+        "A very simple web app that uses Express, Jade and Stylus to demonstrate markdown-to-html streaming",
+    "main": "app.js",
+    "author": "Craig Johannsen",
+    "license": "BSD-3-Clause",
+    "dependencies": {
+        "errorhandler": "1.1.x",
+        "express": "4.6.x",
+        "jade": "1.4.x",
+        "method-override": "2.1.x",
+        "morgan": "1.5.x",
+        "serve-favicon": "2.0.x",
+        "stylus": "0.47.x"
+    },
+    "engines": { "node": ">=0.10.29" },
+    "os": ["win32", "win64", "linux"],
+    "scripts": {
+      "start": "node web.js"
+    }
+}

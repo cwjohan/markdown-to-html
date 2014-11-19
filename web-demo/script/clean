@@ -1,0 +1,4 @@
+#!/bin/bash
+echo removing:
+find . -path ./node_modules -prune -o \( -name \*~ -type f -print -exec rm {} \; \)
+find ./test -name \*js -type f -print -exec rm {} \;

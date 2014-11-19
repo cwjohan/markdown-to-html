@@ -1,0 +1,21 @@
+﻿extends layout
+
+block content
+  h1= title
+  p.greeting.
+    Welcome to the #{title}. 
+  div
+    hr
+    h3 Example of Markdown Rendering:
+    div Click 
+      a(href="/markdown/test.md") here 
+      span to see test.md rendered as a Markdown file.
+      p Try substituting test2.md for test.md.
+
+    h3 Example of Github-Markdown rendering:
+    div Click 
+      a(href="/github-markdown/test.md") here 
+      span to see test.md rendered as a Github-Markdown file.
+      p Try substituting test2.md for test.md.
+    hr
+

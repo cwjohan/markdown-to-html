@@ -51,7 +51,7 @@ tmp.file({prefix: 'markdown-', postfix: '.html'}, function(err, tmpPath, fd, cle
   if (verbose) console.log('tmp path="' + tmpPath);
   var out = fs.createWriteStream(null, {fd: fd});
   var md = new GithubMarkdown();
-  md.bufmax = 128;
+  md.bufmax = 2048;
   md.debug = debug;
   md.render(fileName, opts, function(err) {
     if (err) {

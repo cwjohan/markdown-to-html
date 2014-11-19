@@ -1,7 +1,7 @@
 {
   "name": "markdown-to-html",
-  "version": "0.0.4",
-  "description": "Converts markdown text to HTML. A readable stream plus utilities.",
+  "version": "0.0.5",
+  "description": "Converts markdown text to HTML. A readable stream plus utilities and web demo.",
   "main": "markdown.js",
   "bin": {
     "markdown": "./bin/markdown",
@@ -12,7 +12,8 @@
   "preferGlobal": true,
   "scripts": {
     "test": "bash script/test",
-    "clean": "bash script/clean"
+    "clean": "bash script/clean",
+    "start": "bash script/web-demo"
   },
   "repository": {
     "type": "git",
@@ -39,11 +40,18 @@
     "open": "0.0.5",
     "pygmentize-bundled": "^2.2.0",
     "request": "^2.47.0",
-    "tmp": "0.0.24",
-    "yargs": "^1.3.3"
+    "tmp": "0.0.24"
   },
   "directories": {
     "test": "test"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "errorhandler": "1.1.x",
+    "express": "4.6.x",
+    "jade": "1.4.x",
+    "method-override": "2.1.x",
+    "morgan": "1.5.x",
+    "serve-favicon": "2.0.x",
+    "stylus": "0.47.x"
+  }
 }
