@@ -5,37 +5,44 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<h1>Something Really Cool</h1>
+<h1>
+<a id="user-content-something-really-cool" class="anchor" href="#something-really-cool" aria-hidden="true"><span class="octicon octicon-link"></span></a>Something Really Cool</h1>
 
-<p>Hello world <a href="https://github.com/github/linguist/issues/1" class="issue-link" title="Binary detection issues on extensionless files">github/linguist#1</a> <strong>cool</strong>, and <a href="https://github.com/cwjohan/node-redis-queue/issues/1" class="issue-link" title="Where to find the redis-queue-config file is too restrictive.">#1</a>!<br>
+<p>Hello world github/linguist#1 <strong>cool</strong>, and #1!
 And that is not all.</p>
 
-<p>#Lists</p>
+<h1>
+<a id="user-content-lists" class="anchor" href="#lists" aria-hidden="true"><span class="octicon octicon-link"></span></a>Lists</h1>
 
-<p>##Numbered List</p>
+<h2>
+<a id="user-content-numbered-list" class="anchor" href="#numbered-list" aria-hidden="true"><span class="octicon octicon-link"></span></a>Numbered List</h2>
 
-<ol class="task-list">
+<ol>
 <li>Item One</li>
 <li>Item Two</li>
 <li>Item Three</li>
 </ol>
 
-<p>##Bullet List</p>
+<h2>
+<a id="user-content-bullet-list" class="anchor" href="#bullet-list" aria-hidden="true"><span class="octicon octicon-link"></span></a>Bullet List</h2>
 
-<ul class="task-list">
+<ul>
 <li>Item One</li>
 <li>Item Two</li>
 <li>Item Three</li>
 </ul>
 
-<p>#Code Example</p>
+<h1>
+<a id="user-content-code-example" class="anchor" href="#code-example" aria-hidden="true"><span class="octicon octicon-link"></span></a>Code Example</h1>
 
-<p>##Code enclosed in 'backquotes':</p>
+<h2>
+<a id="user-content-code-enclosed-in-backquotes" class="anchor" href="#code-enclosed-in-backquotes" aria-hidden="true"><span class="octicon octicon-link"></span></a>Code enclosed in 'backquotes':</h2>
 
-<p>Always use <code>var</code> to define a variable. For example, <code>var baz = 'initial value';</code> would define<br>
+<p>Always use <code>var</code> to define a variable. For example, <code>var baz = 'initial value';</code> would define
 variable <code>baz</code>.</p>
 
-<p>##This is some nonsense javascript code:</p>
+<h2>
+<a id="user-content-this-is-some-nonsense-javascript-code" class="anchor" href="#this-is-some-nonsense-javascript-code" aria-hidden="true"><span class="octicon octicon-link"></span></a>This is some nonsense javascript code:</h2>
 
 <pre><code>    var fs = require('fs');
     var count = 0, text;
@@ -59,87 +66,93 @@ variable <code>baz</code>.</p>
     }
 </code></pre>
 
-<p>#Fenced Javascript Code</p>
+<h1>
+<a id="user-content-fenced-javascript-code" class="anchor" href="#fenced-javascript-code" aria-hidden="true"><span class="octicon octicon-link"></span></a>Fenced Javascript Code</h1>
 
-<div class="highlight highlight-js"><pre><span class="pl-s">var</span> fs <span class="pl-ko">=</span> <span class="pl-sf">require</span>(<span class="pl-s1"><span class="pl-pds">'</span>fs<span class="pl-pds">'</span></span>);
-<span class="pl-s">var</span> count <span class="pl-ko">=</span> <span class="pl-cn">0</span>, text;
-exports.bar <span class="pl-ko">=</span> {
-  boo<span class="pl-ko">:</span> <span class="pl-c1">true</span>,
-  baz<span class="pl-ko">:</span> <span class="pl-s1"><span class="pl-pds">'</span>Fred<span class="pl-pds">'</span></span>
+<div class="highlight highlight-js"><pre><span class="pl-s">var</span> fs <span class="pl-k">=</span> <span class="pl-s3">require</span>(<span class="pl-s1"><span class="pl-pds">'</span>fs<span class="pl-pds">'</span></span>);
+<span class="pl-s">var</span> count <span class="pl-k">=</span> <span class="pl-c1">0</span>, text;
+<span class="pl-sv">exports</span>.bar <span class="pl-k">=</span> {
+  boo<span class="pl-k">:</span> <span class="pl-c1">true</span>,
+  baz<span class="pl-k">:</span> <span class="pl-s1"><span class="pl-pds">'</span>Fred<span class="pl-pds">'</span></span>
 };
 
-<span class="pl-s">function</span> <span class="pl-enf">foo</span>(<span class="pl-vpf">inc</span>) {
+<span class="pl-st">function</span> <span class="pl-en">foo</span>(<span class="pl-vpf">inc</span>) {
   <span class="pl-k">try</span> {
-    console<span class="pl-sf">.log</span>(<span class="pl-s1"><span class="pl-pds">"</span>foo has been called<span class="pl-pds">"</span></span>);
-    count <span class="pl-ko">=</span> count <span class="pl-ko">+</span> inc;
-    <span class="pl-k">if</span> (count <span class="pl-ko">&gt;=</span> <span class="pl-cn">10</span>) {
-      count <span class="pl-ko">=</span> <span class="pl-cn">0</span>;
+    <span class="pl-en">console</span><span class="pl-s3">.log</span>(<span class="pl-s1"><span class="pl-pds">"</span>foo has been called<span class="pl-pds">"</span></span>);
+    count <span class="pl-k">=</span> count <span class="pl-k">+</span> inc;
+    <span class="pl-k">if</span> (count <span class="pl-k">&gt;=</span> <span class="pl-c1">10</span>) {
+      count <span class="pl-k">=</span> <span class="pl-c1">0</span>;
     } <span class="pl-k">else</span> {
-      text <span class="pl-ko">=</span> fs.readFileSync(<span class="pl-s1"><span class="pl-pds">'</span>foo.txt<span class="pl-pds">'</span></span>);
+      text <span class="pl-k">=</span> fs.readFileSync(<span class="pl-s1"><span class="pl-pds">'</span>foo.txt<span class="pl-pds">'</span></span>);
     }
   <span class="pl-k">catch</span>(err) {
-    <span class="pl-k">throw</span> <span class="pl-ko">new</span> <span class="pl-enti">Error</span>(<span class="pl-s1"><span class="pl-pds">'</span>Help! <span class="pl-pds">'</span></span> <span class="pl-ko">+</span> err);
+    <span class="pl-k">throw</span> <span class="pl-k">new</span> <span class="pl-en">Error</span>(<span class="pl-s1"><span class="pl-pds">'</span>Help! <span class="pl-pds">'</span></span> <span class="pl-k">+</span> err);
   }
 }</pre></div>
 
-<p>##Fenced Ruby Code</p>
+<h2>
+<a id="user-content-fenced-ruby-code" class="anchor" href="#fenced-ruby-code" aria-hidden="true"><span class="octicon octicon-link"></span></a>Fenced Ruby Code</h2>
 
-<div class="highlight highlight-ruby"><pre><span class="pl-mr"><span class="pl-kos">require</span> <span class="pl-s1"><span class="pl-pds">"</span>bunny<span class="pl-pds">"</span></span></span>
+<div class="highlight highlight-ruby"><pre><span class="pl-k">require</span> <span class="pl-s1"><span class="pl-pds">"</span>bunny<span class="pl-pds">"</span></span>
 
-conn <span class="pl-ko">=</span> <span class="pl-sc">Bunny</span>.<span class="pl-kos">new</span>(<span class="pl-cos"><span class="pl-pdc1">:</span>hostname</span> =&gt; <span class="pl-s1"><span class="pl-pds">"</span>127.0.0.1<span class="pl-pds">"</span></span>, <span class="pl-cos"><span class="pl-pdc1">:</span>port</span> =&gt; <span class="pl-cn">5672</span>)
+conn <span class="pl-k">=</span> <span class="pl-s3">Bunny</span>.<span class="pl-k">new</span>(<span class="pl-c1">:hostname</span> =&gt; <span class="pl-s1"><span class="pl-pds">"</span>127.0.0.1<span class="pl-pds">"</span></span>, <span class="pl-c1">:port</span> =&gt; <span class="pl-c1">5672</span>)
 conn.start
 
-ch <span class="pl-ko">=</span> conn.create_channel
-q <span class="pl-ko">=</span> ch.queue(<span class="pl-s1"><span class="pl-pds">"</span>hello<span class="pl-pds">"</span></span>)
+ch <span class="pl-k">=</span> conn.create_channel
+q <span class="pl-k">=</span> ch.queue(<span class="pl-s1"><span class="pl-pds">"</span>hello<span class="pl-pds">"</span></span>)
 
-q.subscribe(<span class="pl-cos"><span class="pl-pdc1">:</span>ack</span> =&gt; <span class="pl-c1">true</span>, <span class="pl-cos"><span class="pl-pdc1">:</span>block</span> =&gt; <span class="pl-c1">true</span>,) <span class="pl-k">do </span>|<span class="pl-v">delivery_info</span>, <span class="pl-v">properties</span>, <span class="pl-v">body</span>|
+q.subscribe(<span class="pl-c1">:ack</span> =&gt; <span class="pl-c1">true</span>, <span class="pl-c1">:block</span> =&gt; <span class="pl-c1">true</span>,) <span class="pl-k">do </span>|<span class="pl-vo">delivery_info</span>, <span class="pl-vo">properties</span>, <span class="pl-vo">body</span>|
     puts <span class="pl-s1"><span class="pl-pds">"</span> [x] Received '<span class="pl-pse">#{</span><span class="pl-s2">body</span><span class="pl-pse"><span class="pl-s2">}</span></span>'<span class="pl-pds">"</span></span>
-    <span class="pl-c"><span class="pl-pdc">#</span> imitate some work</span>
+    <span class="pl-c"># imitate some work</span>
     sleep body.count(<span class="pl-s1"><span class="pl-pds">"</span>.<span class="pl-pds">"</span></span>).to_i
     puts <span class="pl-s1"><span class="pl-pds">"</span> [x] Done<span class="pl-pds">"</span></span>
     ch.ack(delivery_info.delivery_tag)
-    <span class="pl-k">if</span> body <span class="pl-ko">==</span> <span class="pl-s1"><span class="pl-pds">"</span>stop<span class="pl-pds">"</span></span>
+    <span class="pl-k">if</span> body <span class="pl-k">==</span> <span class="pl-s1"><span class="pl-pds">"</span>stop<span class="pl-pds">"</span></span>
         delivery_info.consumer.cancel
     <span class="pl-k">end</span>
 <span class="pl-k">end</span></pre></div>
 
-<p>##Fenced Coffeescript Code</p>
+<h2>
+<a id="user-content-fenced-coffeescript-code" class="anchor" href="#fenced-coffeescript-code" aria-hidden="true"><span class="octicon octicon-link"></span></a>Fenced Coffeescript Code</h2>
 
-<div class="highlight highlight-coffee"><pre><span class="pl-va"><span class="pl-va">fs <span class="pl-ko">=</span></span></span> <span class="pl-sf">require</span> <span class="pl-s1"><span class="pl-pds">'</span>fs<span class="pl-pds">'</span></span>
-<span class="pl-va"><span class="pl-va">count <span class="pl-ko">=</span></span></span> <span class="pl-cn">0</span>
-<span class="pl-va"><span class="pl-va">text <span class="pl-ko">=</span></span></span> <span class="pl-c1">null</span>
-<span class="pl-va"><span class="pl-va">exports.bar <span class="pl-ko">=</span></span></span>
-  <span class="pl-va"><span class="pl-va">boo:</span></span> <span class="pl-c1">true</span>
-  <span class="pl-va"><span class="pl-va">baz:</span></span> <span class="pl-s1"><span class="pl-pds">'</span>Fred<span class="pl-pds">'</span></span>
+<div class="highlight highlight-coffee"><pre><span class="pl-v"><span class="pl-v">fs <span class="pl-k">=</span></span></span> <span class="pl-s3">require</span> <span class="pl-s1"><span class="pl-pds">'</span>fs<span class="pl-pds">'</span></span>
+<span class="pl-v"><span class="pl-v">count <span class="pl-k">=</span></span></span> <span class="pl-c1">0</span>
+<span class="pl-v"><span class="pl-v">text <span class="pl-k">=</span></span></span> <span class="pl-c1">null</span>
+<span class="pl-v"><span class="pl-v">exports.bar <span class="pl-k">=</span></span></span>
+  <span class="pl-v"><span class="pl-v">boo:</span></span> <span class="pl-c1">true</span>
+  <span class="pl-v"><span class="pl-v">baz:</span></span> <span class="pl-s1"><span class="pl-pds">'</span>Fred<span class="pl-pds">'</span></span>
 
-<span class="pl-enf">foo </span><span class="pl-ko">=</span><span class="pl-vpf"> <span class="pl-vpf">(inc)</span></span> <span class="pl-s"><span class="pl-s">-&gt;</span></span>
+<span class="pl-en">foo </span><span class="pl-k">=</span><span class="pl-vpf"> <span class="pl-vpf">(inc)</span></span> <span class="pl-st"><span class="pl-st">-&gt;</span></span>
   <span class="pl-k">try</span>
-    console.<span class="pl-sf">log</span> <span class="pl-s1"><span class="pl-pds">"</span>foo has been called<span class="pl-pds">"</span></span>
-    <span class="pl-va"><span class="pl-va">count <span class="pl-ko">=</span></span></span> count <span class="pl-ko">+</span> inc
-    <span class="pl-k">if</span> count <span class="pl-ko">&gt;=</span> <span class="pl-cn">10</span>
-      <span class="pl-va"><span class="pl-va">count <span class="pl-ko">=</span></span></span> <span class="pl-cn">0</span>
+    <span class="pl-en">console</span>.<span class="pl-s3">log</span> <span class="pl-s1"><span class="pl-pds">"</span>foo has been called<span class="pl-pds">"</span></span>
+    <span class="pl-v"><span class="pl-v">count <span class="pl-k">=</span></span></span> count <span class="pl-k">+</span> inc
+    <span class="pl-k">if</span> count <span class="pl-k">&gt;=</span> <span class="pl-c1">10</span>
+      <span class="pl-v"><span class="pl-v">count <span class="pl-k">=</span></span></span> <span class="pl-c1">0</span>
     <span class="pl-k">else</span>
-      <span class="pl-va"><span class="pl-va">text <span class="pl-ko">=</span></span></span> fs.readFileSync <span class="pl-s1"><span class="pl-pds">'</span>foo.txt<span class="pl-pds">'</span></span>
+      <span class="pl-v"><span class="pl-v">text <span class="pl-k">=</span></span></span> fs.readFileSync <span class="pl-s1"><span class="pl-pds">'</span>foo.txt<span class="pl-pds">'</span></span>
   <span class="pl-k">catch</span> err
-    <span class="pl-k">throw</span> <span class="pl-ko">new</span> <span class="pl-enti">Error</span> <span class="pl-s1"><span class="pl-pds">'</span>Help! <span class="pl-pds">'</span></span> <span class="pl-ko">+</span> err</pre></div>
+    <span class="pl-k">throw</span> <span class="pl-k">new</span> <span class="pl-en">Error</span> <span class="pl-s1"><span class="pl-pds">'</span>Help! <span class="pl-pds">'</span></span> <span class="pl-k">+</span> err</pre></div>
 
-<p>##Fenced Python Code</p>
+<h2>
+<a id="user-content-fenced-python-code" class="anchor" href="#fenced-python-code" aria-hidden="true"><span class="octicon octicon-link"></span></a>Fenced Python Code</h2>
 
-<div class="highlight highlight-py"><pre><span class="pl-s">def</span> <span class="pl-enf">fib</span>(<span class="pl-vpf">n</span>):
-    <span class="pl-k">if</span> n <span class="pl-ko">&gt;</span> <span class="pl-cn">1</span>:
-        <span class="pl-k">return</span> n <span class="pl-ko">*</span> fib(n <span class="pl-ko">-</span><span class="pl-cn">1</span>)
+<div class="highlight highlight-py"><pre><span class="pl-st">def</span> <span class="pl-en">fib</span>(<span class="pl-vpf">n</span>):
+    <span class="pl-k">if</span> n <span class="pl-k">&gt;</span> <span class="pl-c1">1</span>:
+        <span class="pl-k">return</span> n <span class="pl-k">*</span> fib(n <span class="pl-k">-</span><span class="pl-c1">1</span>)
     <span class="pl-k">else</span>:
-        <span class="pl-k">return</span> <span class="pl-cn">1</span>
+        <span class="pl-k">return</span> <span class="pl-c1">1</span>
 
-<span class="pl-k">if</span> __name__ <span class="pl-ko">==</span> <span class="pl-s1"><span class="pl-pds">'</span>__main__<span class="pl-pds">'</span></span>:
+<span class="pl-k">if</span> <span class="pl-sv">__name__</span> <span class="pl-k">==</span> <span class="pl-s1"><span class="pl-pds">'</span>__main__<span class="pl-pds">'</span></span>:
     <span class="pl-k">import</span> sys
-    n <span class="pl-ko">=</span> <span class="pl-st">int</span>(sys.argv[<span class="pl-cn">1</span>]) <span class="pl-k">if</span> <span class="pl-sf">len</span>(sys.argv) <span class="pl-ko">&gt;</span> <span class="pl-cn">1</span> <span class="pl-k">else</span> <span class="pl-cn">5</span>
-    f <span class="pl-ko">=</span> fib(n)
+    n <span class="pl-k">=</span> <span class="pl-s3">int</span>(sys.argv[<span class="pl-c1">1</span>]) <span class="pl-k">if</span> <span class="pl-s3">len</span>(sys.argv) <span class="pl-k">&gt;</span> <span class="pl-c1">1</span> <span class="pl-k">else</span> <span class="pl-c1">5</span>
+    f <span class="pl-k">=</span> fib(n)
     <span class="pl-k">print</span> <span class="pl-s1"><span class="pl-pds">'</span>fib(<span class="pl-pds">'</span></span>, n, <span class="pl-s1"><span class="pl-pds">'</span>) is <span class="pl-pds">'</span></span>, f</pre></div>
 
-<p>#In Conclusion</p>
+<h1>
+<a id="user-content-in-conclusion" class="anchor" href="#in-conclusion" aria-hidden="true"><span class="octicon octicon-link"></span></a>In Conclusion</h1>
 
-<p>You <em>can</em> do it <strong>too</strong>!<br>
+<p>You <em>can</em> do it <strong>too</strong>!
 Try to enclose <code>code</code> in <em>backquotes</em>.</p>
+
 </body>
 <html>
