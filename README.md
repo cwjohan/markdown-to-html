@@ -60,6 +60,7 @@ github-markdownb myfile.md [<options>]
 var Markdown = require('markdown-to-html').Markdown;
 var md = new Markdown();
 md.bufmax = 2048;
+var fileName = 'test/test.md';
 var opts = {title: 'File $BASENAME in $DIRNAME', stylesheet: 'test/style.css'};
 ...
 // Write a header.
