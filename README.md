@@ -37,13 +37,13 @@ markdownb myfile.md [<options>]
 ####Command line utility to output the Github API results to stdout
 
 ```
-github-markdown myfile.md
+github-markdown myfile.md [<options>]
 ```
 
 ####Command line utility to output the Github API results to default browser
 
 ```
-github-markdownb myfile.md
+github-markdownb myfile.md [<options>]
 ```
 
 ####Run the web demo
