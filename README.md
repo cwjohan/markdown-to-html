@@ -5,6 +5,7 @@ Command-line utility to convert Github Flavored Markdown to HTML.
 Output may be to stdout or to your default browser.
 Also, the underlying Markdown and GithubMarkdown classes are readable stream classes
 and may be used however you like (e.g., pipe to an http response or to stdout).
+Includes a demo of a web server app that uses both the classes.
 
 ##Installation
 
@@ -73,6 +74,12 @@ md.render(fileName, opts, function(err) {
 ##Options for markdown and markdownb
 
 `--flavor <type>` -- Format as type 'gfm' (default) or just plain 'markdown'. May be abbreviated `-f`.
+Note that for the `github-markdown` utility or the `GithubMarkdown` class it is the 'markdown' flavor that gives you
+something resembling the README.md format on Github. Whereas, the 'gfm' flavor gives you something resembling the
+the format of comments and issues on Github. This is due to how the Github Markdown API works. On the other hand,
+for the `markdown` utility or the `Markdown` class it is virtually the opposite. For example, fenced code blocks
+don't work when using the `markdown` utility or the `Markdown` class with the `--flavor markdown` option. This is
+due to how the `marked` markdown parser works.
 
 `--highlight` -- Highlight code blocks with style info. Highlight has no effect in
 github-markdown. May be abbreviated `-h`. Defaults to `false`.
