@@ -6,7 +6,8 @@ var jade = require('jade');
 var path = require('path');
 var GithubMarkdown = require('markdown-to-html').GithubMarkdown;
 
-var opts = {
+var mdOpts = {
+  flavor:     'markdown',
   context:    'cwjohan/node-redis-queue',
   username:   'guest'
 };
@@ -14,7 +15,7 @@ var viewsDir = path.join(path.dirname(__dirname), 'views');
 
 // Class RenderGithubMarkdown.
 function RenderGithubMarkdown() {
-  this.options = {title: 'Default', randomQuote: false}; // Default value only.
+  this.options = {}; // Default value only.
 
   this.routeMe = function(req, res) {
     var md = new GithubMarkdown();
@@ -30,7 +31,7 @@ function RenderGithubMarkdown() {
       res.write(jade.renderFile(path.join(viewsDir, 'mdtrailer.jade'), {pretty: true}));
       res.end();
     });
-    md.render(fileName, opts, function(err) {
+    md.render(fileName, mdOpts, function(err) {
       if (debug) console.error('>>>renderMarkdown: err=' + err);
       if (err) { res.write('>>>' + err); res.end(); return; }
       else md.pipe(res);

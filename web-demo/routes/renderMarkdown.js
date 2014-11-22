@@ -6,15 +6,15 @@ var jade = require('jade');
 var path = require('path');
 var Markdown = require('markdown-to-html').Markdown;
 
-var opts = {
+var mdOpts = {
   highlight:  true,
-  context:    'cwjohan/node-redis-queue'
+  context:    'cwjohan/markdown-to-html'
 };
 var viewsDir = path.join(path.dirname(__dirname), 'views');
 
 // Class RenderMarkdown.
 function RenderMarkdown() {
-  this.options = {title: 'Default', randomQuote: false}; // Default value only.
+  this.options = {}; // Default value only.
 
   this.routeMe = function(req, res) {
     var md = new Markdown();
@@ -30,7 +30,7 @@ function RenderMarkdown() {
       res.write(jade.renderFile(path.join(viewsDir, 'mdtrailer.jade'), {pretty: true}));
       res.end();
     });
-    md.render(fileName, opts, function(err) {
+    md.render(fileName, mdOpts, function(err) {
       if (debug) console.error('>>>renderMarkdown: err=' + err);
       if (err) { res.write('>>>' + err); res.end(); return; }
       else md.pipe(res);
