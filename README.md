@@ -72,7 +72,7 @@ md.render(fileName, opts, function(err) {
 
 ##Options for markdown and markdownb
 
-####--flavor <type>
+####`--flavor <type>`
 
 Format as type 'gfm' or just plain 'markdown'. May be abbreviated `-f` on the command line.
 Note that for the `github-markdown` utility or the `GithubMarkdown` class it is the 'markdown' flavor that gives you
@@ -83,59 +83,59 @@ don't work when using the `markdown` utility or the `Markdown` class with the `-
 due to how the `marked` markdown parser works. The default value for this option is whichever flavor results in
 something more like README.md format.
 
-####--highlight
+####`--highlight`
 
 Highlight code blocks with style info. Highlight has no effect in github-markdown.
 May be abbreviated `-h` on the command line. Defaults to `false`.
 
-####--stylesheet <stylesheet>
+####`--stylesheet <stylesheet>`
 
 Outputs HTML header with link element referring to the given stylesheet.
 May be abbreviated `-s` on the command line.
 
-####--title <title>
+####`--title <title>`
 
 Outputs HTML header with given title. Title string may include special values
 `$FILENAME`, `$DIRNAME`, `$BASENAME`, or `$PATHNAME` variables which are replaced by the
 corresponding .md filename, directory name, base name, or full path, respectively.
 Alternatively, the title may be any text you wish. May be abbreviated `-t` on the command line.
 
-####--context <context>
+####`--context <context>`
 
 Suupply the relevant Github user/project to use with #<n> issue number references. Typically, these are
 not used in README.md files but, rather, in comments and issue text on Github.
 May be abbreviated `-c` on the command line.
 
-####--verbose
+####`--verbose`
 
 Verbose output. May be abbreviated `-v` on the command line. Defaults to `false` unless debug has
 been specified, in which case it is set to `true`. Only used by the command line utilities.
 
-####--debug
+####`--debug`
 
 Debug output to stderr. For example, outputs the individual chunks of data pushed to output.
 May be abbreviated `-d` on the command line. Defaults to `false`. Used only by the command line
 utilities. However, the Markdown and GithubMarkdown classes both have a `debug` property.
 
-####--help
+####`--help`
 
 Output usage info. Only used by the command line utilities.
 
 ##Markdown and GithubMarkdown class properties
 
-####bufmax
+####`bufmax`
 
 The chunk size for streaming -- that is, the maximum amout of data to push to the read
 operation at any given time. Defaults to 1024.
 
-####debug
+####`debug`
 
 Debug output to stderr. For example, outputs the individual chunks of data pushed to output.
 Defaults to `false`.
 
 ##Markdown and GithubMarkdown class methods
 
-####render(fileName, opts, onDone)
+####`render(fileName, opts, onDone)`
 
 Renders the markdown text in the given file using the given
 options. Calls the onDone callback function when rendering is finished, if specified. If you are going to
