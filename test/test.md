@@ -1,7 +1,7 @@
 Something Really Cool
 =========
 
-Hello world github/linguist#1 **cool**, and #1!
+Hello world github/linguist#1 **cool**, and #1!   
 And that is not all.
 
 #Lists

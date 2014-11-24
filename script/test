@@ -12,7 +12,7 @@ fi
 
 echo
 echo =======Testing github-markdown=========
-node bin/github-markdown test/test.md -f markdown -s style.css -c cwjohan/node-redis-queue -t 'file $BASENAME in $DIRNAME' >test/github-markdown.html
+node bin/github-markdown test/test.md -s style.css -c cwjohan/node-redis-queue -t 'file $BASENAME in $DIRNAME' >test/github-markdown.html
 result=`diff -q -w test/github-markdown-ref.html test/github-markdown.html`
 if [ -z "$result" ]; then
   echo Passed
