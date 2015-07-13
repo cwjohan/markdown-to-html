@@ -1,4 +1,4 @@
-#!node
+#!/usr/bin/env node
 // Converts a markdown file into an HTML file, writing it to stdout.
 // Uses the github API, so it outputs what you will see on github,
 // more or less. Some formatting I would have expected does not happen.
