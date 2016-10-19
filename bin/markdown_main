@@ -1,0 +1,28 @@
+#!node
+// Converts a markdown file into an HTML file, writing it to stdout.
+//
+// Usage:
+//   markdown <filename> [<options>]
+// or
+//   markdown --help
+// to see more detailed usage info.
+//
+var Markdown = require('..').Markdown;
+var opts = require('../lib/getopts')();
+var fileName = opts._[0];
+var verbose = opts.verbose || opts.debug;
+if (verbose) console.error('>>>opts=', opts);
+
+var md = new Markdown();
+md.debug = opts.debug;
+md.bufmax = 2048;
+
+md.render(fileName, opts, function(err) {
+  if (err) {
+    console.error('>>>' + err);
+    process.exit();
+  }
+  if (verbose) console.error('>>>starting to pipe...');
+  md.pipe(process.stdout);
+});
+

@@ -5,6 +5,7 @@
   "main": "markdown.js",
   "bin": {
     "markdown": "./bin/markdown",
+    "markdown_main" : "./markdown_main",
     "markdownb": "./bin/markdownb",
     "github-markdown": "./bin/github-markdown",
     "github-markdownb": "./bin/github-markdownb"
