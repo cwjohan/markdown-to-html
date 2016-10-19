@@ -1,4 +1,4 @@
-#!node
+#!/usr/bin/env node
 // Converts a markdown file into an HTML file, writing it to stdout.
 //
 // Usage:
