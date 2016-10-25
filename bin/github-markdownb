@@ -9,7 +9,7 @@
 //   bin/github-markdownb test/test2.md -s test/style.css -h \
 //        -c cwjohan/node-redis-queue -t 'file $BASENAME in $DIRNAME'
 //
-//
+// Unixy line endings now -- just lf, no crlf
 var GithubMarkdown = require('..').GithubMarkdown;
 var opts = require('../lib/getopts')();
 var verbose = opts.verbose || opts.debug;
