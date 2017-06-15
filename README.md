@@ -39,11 +39,12 @@ npm install markdown-to-html -g
     github-markdownb myfile.md [<options>]
 
 ####Run the web demo
-
-1. Run `git clone https://github.com/cwjohan/markdown-to-html.git` to create a markdown-to-html directory.
-1. Run `cd markdown-to-html`
-1. Run `npm install`
-1. Run `npm start`.
+```
+git clone https://github.com/cwjohan/markdown-to-html.git
+cd markdown-to-html
+npm install
+npm start
+```
 1. In a web browser address field type [localhost:3000](http://localhost:3000).
 
 ###Use the Markdown class to render markdown text
