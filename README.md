@@ -107,6 +107,27 @@ Suupply the relevant Github user/project to use with #<n> issue number reference
 not used in README.md files but, rather, in comments and issue text on Github.
 May be abbreviated `-c` on the command line.
 
+#### `--template`
+
+Optional HTML template file to be used. You can set this template instead of --title and --stylesheet. The only requirement is that the template should contain an outlet named {markdown} to indicate where the markdown code will be placed.
+
+Example template:
+```
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>My own title</title>
+    <link rel="stylesheet" href="./mycss.css">
+  </head>
+  <body>
+    <h3>My own header</h3>
+    {markdown}
+    <h3>My own footer</h3>
+  </body>
+</html>
+```
+
 #### `--verbose`
 
 Verbose output. May be abbreviated `-v` on the command line. Defaults to `false` unless debug has
