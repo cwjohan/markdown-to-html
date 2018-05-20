@@ -50,24 +50,28 @@ In a web browser address field type [localhost:3000](http://localhost:3000).
 ### Use the Markdown class to render markdown text
 
 ```js
-var Markdown = require('markdown-to-html').Markdown;
-var md = new Markdown();
+const fs = require('fs');
+const Markdown = require('markdown-to-html').Markdown;
+const md = new Markdown();
 md.bufmax = 2048;
-var fileName = 'test/test.md';
-var opts = {title: 'File $BASENAME in $DIRNAME', stylesheet: 'test/style.css'};
-...
-// Write a header.
-console.log('===============================');
-// Write a trailer at eof.
-md.once('end', function() {
-  console.log('===============================');
-});
+
+// input file
+const fileName = 'README[RU].md';
+const opts = {
+            title: 'File $BASENAME in $DIRNAME',
+            stylesheet: 'test/style.css',
+            utf : 'utf-8'};
+
 md.render(fileName, opts, function(err) {
   if (err) {
     console.error('>>>' + err);
     process.exit();
   }
-  md.pipe(process.stdout);
+
+  // output in console
+  md.pipe(process.stdout)
+  // output in file
+  md.pipe(fs.createWriteStream('index.html'))
 });
 ```
 
