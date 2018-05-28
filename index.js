@@ -1,4 +1,3 @@
-exports.Markdown = require('./lib/markdown.js');
+exports.Markdown = require('./lib/m2h.js');
 
-exports.GithubMarkdown = require('./lib/github-markdown.js');
 
