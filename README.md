@@ -8,7 +8,7 @@ and may be used however you like (e.g., pipe to an http response or to stdout).
 Includes a demo of a web server app that uses both the classes.
 
 ---
-# Updated in fork
+## Updated in fork
 - Process markdown from string:
   - Was:
   ```javascript
