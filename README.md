@@ -20,9 +20,10 @@ Includes a demo of a web server app that uses both the classes.
     }
 
     // handle stream
-});
+  });
   ```
   - And now:
+  ```javascript
   markdown.renderFromString("# Test pls", opts, function (err) {
     if (err) {
         console.error('>>>' + err);
@@ -30,7 +31,8 @@ Includes a demo of a web server app that uses both the classes.
     }
 
     // same stream handling
-});
+  });
+  ```
 - Some code refactoring (removed unnecessary dependencies, removed test files, `var` -> `let` etc)
 
 ---
