@@ -31,3 +31,7 @@ node_modules
 *~
 *.swp
 
+# JetBrains, MacOS
+.idea
+*.iml
+.DS_Store

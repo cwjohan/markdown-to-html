@@ -11,9 +11,7 @@
   },
   "preferGlobal": true,
   "scripts": {
-    "test": "bash script/test",
-    "clean": "bash script/clean",
-    "start": "bash script/web-demo"
+    "clean": "bash script/clean"
   },
   "repository": {
     "type": "git",
@@ -47,12 +45,11 @@
     "test": "test"
   },
   "devDependencies": {
-    "errorhandler": "1.1.x",
-    "express": "4.6.x",
-    "jade": "1.4.x",
-    "method-override": "2.1.x",
-    "morgan": "1.5.x",
-    "serve-favicon": "2.0.x",
-    "stylus": "0.47.x"
+    "errorhandler": "^1.5.0",
+    "express": "^4.16.3",
+    "method-override": "^2.3.10",
+    "morgan": "^1.9.0",
+    "serve-favicon": "^2.5.0",
+    "stylus": "^0.54.5"
   }
 }

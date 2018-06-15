@@ -1,5 +1,0 @@
-#!/bin/bash
-cd web-demo
-export NODE_PATH=../..
-node web
-
