@@ -7,6 +7,36 @@ Also, the underlying Markdown and GithubMarkdown classes are readable stream cla
 and may be used however you like (e.g., pipe to an http response or to stdout).
 Includes a demo of a web server app that uses both the classes.
 
+---
+## Updated in fork
+- Process markdown from string:
+  - Was:
+  ```javascript
+  let filename = 'test.md'
+  markdown.renderFromString(filename, opts, function (err) {
+    if (err) {
+        console.error('>>>' + err);
+        process.exit();
+    }
+
+    // handle stream
+  });
+  ```
+  - And now:
+  ```javascript
+  markdown.renderFromString("# Test pls", opts, function (err) {
+    if (err) {
+        console.error('>>>' + err);
+        process.exit();
+    }
+
+    // same stream handling
+  });
+  ```
+- Some code refactoring (removed unnecessary dependencies, removed test files, `var` -> `let` etc)
+
+---
+
 ## Installation
 
 #### To use the command line utilities
