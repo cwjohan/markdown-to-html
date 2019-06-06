@@ -35,7 +35,7 @@ tmp.file({prefix: 'markdown-', postfix: '.html'}, function(err, tmpPath, fd, cle
         var cssdir = path.dirname(stylesheet);
         var cssbasename = path.basename(stylesheet);
         var cssdirpath = path.join(dirname, cssdir);
-        if (cssdir && ! fs.existsSync(cssdirpath)) fs.mkdirSync(cssdirpath);
+        if (cssdir && ! fs.existsSync(cssdirpath)) fs.mkdirSync(cssdirpath, {recursive: true});
         cssfullpath = path.join(cssdirpath, cssbasename);
         fs.writeFileSync(cssfullpath, csscontent);
       } catch(err) {
