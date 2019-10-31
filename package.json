@@ -37,7 +37,7 @@
   "dependencies": {
     "gfm-linkify": "^0.1.0",
     "marked": "^0.3.2",
-    "open": "0.0.5",
+    "open": "7.0.0",
     "pygmentize-bundled": "^2.2.0",
     "request": "^2.47.0",
     "tmp": "0.0.24",
