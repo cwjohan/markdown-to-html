@@ -51,7 +51,7 @@
     "express": "4.6.x",
     "jade": "1.4.x",
     "method-override": "2.1.x",
-    "morgan": "1.5.x",
+    "morgan": "1.9.x",
     "serve-favicon": "2.0.x",
     "stylus": "0.47.x"
   }
