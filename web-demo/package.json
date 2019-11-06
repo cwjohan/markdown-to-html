@@ -10,7 +10,7 @@
         "errorhandler": "1.1.x",
         "express": "4.6.x",
         "jade": "1.4.x",
-        "method-override": "2.1.x",
+        "method-override": "3.0.x",
         "morgan": "1.5.x",
         "serve-favicon": "2.0.x",
         "stylus": "0.47.x"
