@@ -57,10 +57,10 @@ var fileName = 'test/test.md';
 var opts = {title: 'File $BASENAME in $DIRNAME', stylesheet: 'test/style.css'};
 ...
 // Write a header.
-console.log('===============================');
+console.log('==================================');
 // Write a trailer at eof.
 md.once('end', function() {
-  console.log('===============================');
+  console.log('==================================');
 });
 md.render(fileName, opts, function(err) {
   if (err) {
