@@ -77,11 +77,11 @@ md.render(fileName, opts, function(err) {
 
 Format as type 'gfm' or just plain 'markdown'. May be abbreviated `-f` on the command line.
 Note that for the `github-markdown` utility or the `GithubMarkdown` class it is the 'markdown' flavor that gives you
-something resembling the README.md format on Github. Whereas, the 'gfm' flavor gives you something resembling the
+something resembling the README.md format on Github. Whereas, the 'gfm' flavor gives you something resembling
 the format of comments and issues on Github. This is due to how the Github Markdown API works. On the other hand,
-for the `markdown` utility or the `Markdown` class it is virtually the opposite. For example, fenced code blocks
+for the `markdown` utility or the `Markdown` class it is virtually opposite. For example, fenced code blocks
 don't work when using the `markdown` utility or the `Markdown` class with the `--flavor markdown` option. This is
-due to how the `marked` markdown parser works. The default value for this option is whichever flavor results in
+due to the `marked` markdown parser work. The default value for this option is of whichever flavor results in
 something more like README.md format.
 
 #### `--highlight`
