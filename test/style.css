@@ -1,5 +1,5 @@
 body {
-  background-color: White;
+  background-color: red;
   margin-left: 15px;
 }
 h1 {
@@ -24,7 +24,7 @@ div.highlight {
   font-weight: medium;
 }
 .o {
-  color: black;
+  color: white;
 }
 .mi {
   color: Brown;
