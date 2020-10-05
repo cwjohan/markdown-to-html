@@ -1,6 +1,6 @@
 body {
-  background-color: White;
-  margin-left: 15px;
+  background-color: red;
+  margin-left: 16px;
 }
 h1 {
   color: maroon;
@@ -8,7 +8,7 @@ h1 {
 code, div.highlight {
   background-color: MintCream;
   padding-left: -5px;
-  margin-left: 5px;
+  margin-left: 4.8px;
 }
 
 div.highlight {
@@ -24,7 +24,7 @@ div.highlight {
   font-weight: medium;
 }
 .o {
-  color: black;
+  color: white;
 }
 .mi {
   color: Brown;
