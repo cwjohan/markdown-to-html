@@ -168,4 +168,6 @@ performing any other operations on the Markdown or GithubMarkdown stream.
 
 Before calling `render`, you can set up a test for end of file with `on('end', cb)`, which is a good place
 to write any output that should follow the streamed HTML. See the above code example for how to do that.
+Thanks for reading.
+Have a nice day
 
