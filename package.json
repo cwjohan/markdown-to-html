@@ -2,7 +2,6 @@
   "name": "markdown-to-html",
   "version": "0.0.13",
   "description": "Converts markdown text to HTML. A readable stream plus utilities and web demo.",
-  "main": "markdown.js",
   "bin": {
     "markdown": "./bin/markdown",
     "markdownb": "./bin/markdownb",
